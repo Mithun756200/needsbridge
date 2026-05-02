@@ -43,3 +43,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Node dependencies
+node_modules
+
+# Environment variables files (NEVER commit these!)
+.env*
