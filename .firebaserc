@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "needsbridge-dev",
+    "firebase use needsbridge-dev": "needsbridge-dev"
+  },
+  "targets": {},
+  "etags": {}
+}

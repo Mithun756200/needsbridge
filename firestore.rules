@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userRole() {
+      let doc = get(/databases/$(database)/documents/users/$(request.auth.uid));
+      return doc.exists ? (doc.data.get('role', 'field_staff')) : 'field_staff';
+    }
+
+    function isManagement() {
+      return isSignedIn() && userRole() in ['management', 'executive', 'board', 'admin'];
+    }
+
+    function isFieldStaff() {
+      return isSignedIn();
+    }
+
+    // ── needs (Issues) ─────────────────────────────────────────────────────
+    match /needs/{needId} {
+      allow create: if true;
+      allow read:   if true;
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn();
+
+      match /history/{historyId} {
+        allow create: if true;
+        allow read, update, delete: if isSignedIn();
+      }
+      
+      match /field_reports/{reportId} {
+        allow create: if isSignedIn();
+        allow read: if true;
+        allow update, delete: if isSignedIn();
+      }
+    }
+
+    // ── users ──────────────────────────────────────────────────────────────
+    match /users/{userId} {
+      allow read:   if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn();
+    }
+
+    // ── staff_volunteers ───────────────────────────────────────────────────
+    match /staff_volunteers/{volId} {
+      allow read:   if isSignedIn();
+      allow write:  if isSignedIn();
+    }
+
+    // ── donors ────────────────────────────────────────────────────────────
+    match /donors/{donorId} {
+      allow read:   if isSignedIn();
+      allow write:  if isSignedIn();
+    }
+
+    // ── finances ──────────────────────────────────────────────────────────
+    match /finances/{docId} {
+      allow read:   if isSignedIn();
+      allow write:  if isSignedIn();
+    }
+
+    // ── beneficiaries ─────────────────────────────────────────────────────
+    match /beneficiaries/{docId} {
+      allow read:   if isSignedIn();
+      allow write:  if isSignedIn();
+    }
+  }
+}

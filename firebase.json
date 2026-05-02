@@ -1,0 +1,47 @@
+{
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "needsbridge-dev",
+          "appId": "1:838576675886:android:e1cf46cb798822fdcdd3bf",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "needsbridge-dev",
+          "configurations": {
+            "android": "1:838576675886:android:e1cf46cb798822fdcdd3bf",
+            "ios": "1:838576675886:ios:8a7a72f6311923f8cdd3bf",
+            "macos": "1:838576675886:ios:8a7a72f6311923f8cdd3bf",
+            "web": "1:838576675886:web:52795889ce0669a8cdd3bf",
+            "windows": "1:838576675886:web:ef6f19879460eea8cdd3bf"
+          }
+        }
+      }
+    }
+  }
+}

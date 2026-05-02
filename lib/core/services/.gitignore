@@ -1,0 +1,4 @@
+# Ignore Flutter/Dart IDE settings
+.dart_tool/
+# Ignore secret files
+secrets.json

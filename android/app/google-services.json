@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "838576675886",
+    "project_id": "needsbridge-dev",
+    "storage_bucket": "needsbridge-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838576675886:android:e1cf46cb798822fdcdd3bf",
+        "android_client_info": {
+          "package_name": "com.example.needsbridge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838576675886-rrvstrgspas9mifrt558spoehn8j3kgi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.needsbridge",
+            "certificate_hash": "912c44bf7148a4895968f53cec5028b5dc23bea6"
+          }
+        },
+        {
+          "client_id": "838576675886-ms34q4j22hkms6oio5qmuk1brdup1ib9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Zci8YeHr-Gqsa2m8pdQzZBmkbQnGvYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838576675886-ms34q4j22hkms6oio5qmuk1brdup1ib9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "838576675886-vfup00qih1prd65mif70kkkg6be4hk6s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.needsbridge"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
