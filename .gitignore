@@ -49,3 +49,7 @@ node_modules
 
 # Environment variables files (NEVER commit these!)
 .env*
+
+# API Keys and secrets (NEVER commit these!)
+secrets.json
+lib/core/services/secrets.json
